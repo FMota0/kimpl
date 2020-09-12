@@ -82,6 +82,14 @@ app.post('/links', [
   });
 
   const result = await newLink.save();
+
+  await Promise.all(tags.map(async tag => {
+    if (Tag.count({ tag }) == 0) {
+      const newTag = new Tag({ tag });
+      await newTag.save();
+    }
+  }));
+
   res.send(result);
 });
 
