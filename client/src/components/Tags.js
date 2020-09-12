@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const tags = [
   'greedy',
@@ -19,11 +20,11 @@ const Tags = () => {
       {tags.map(tag => {
         return (
           <div key={tag} className="pa3 w-20">
-            <div className="ba br3 card tc">
-              <p>
-                {tag}
-              </p>
-            </div>
+            <Link to={`/tag/${tag}`} style={{textDecoration: 'none'}}> 
+              <div className="ba br3 card tc">
+                  <p>{tag}</p>
+              </div>
+            </Link>
           </div>
         );
       })}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 
 import Header from "./components/Header";
@@ -10,10 +11,11 @@ function App() {
     <div className="App">
       <Header/>
       <div className="ml2 mr2">
-        <Tags/>
-      </div>
-      <div className="ml2 mr2">
-        <Links/>
+        <Switch>
+          <Route path="/" exact component={Tags}/>
+          <Route path="/tag/:tag" exact component={Links}/>
+          <Route path="/link/:linkId" exact/>
+        </Switch>
       </div>
     </div>
   );
