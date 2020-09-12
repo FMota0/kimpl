@@ -16,10 +16,10 @@ const Links = () => {
   return (
     <div className="flex flex-wrap">
       {
-        links.map(link => {
+        Array(20).fill(0).map((_, i) => {
           return (
-            <div key={link.id} className="pa3 w-20">
-              <LinkCard link={link}/>
+            <div key={i} className="pa3 w-10">
+              <LinkCard link={links[0]}/>
             </div>
           );
         })

@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Tags from "./components/Tags";
 import Links from "./components/Links";
 import Link from "./components/Link";
+import CreateLink from "./components/CreateLink";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" exact component={Tags}/>
           <Route path="/tags/:tag" exact component={Links}/>
           <Route path="/links/:linkId" exact component={Link}/>
+          <Route path="/new" component={CreateLink}/>
         </Switch>
       </div>
     </div>
