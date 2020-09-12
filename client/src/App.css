@@ -1,7 +1,23 @@
 :root {
   --celeste: #9cfffaff;
-  --rich-black-fogra-29: #0c1618ff;
+  --rich-black-fogra-39: #000500ff;
   --rhythm: #6a6b83ff;
+}
+
+.rich-black-fogra-39 {
+  color: var(--rich-black-fogra-39);
+}
+
+.celeste {
+  color: var(--celeste);
+}
+
+.b--celeste {
+  border-color: var(--celeste);
+}
+
+html {
+  background-color: var(--rich-black-fogra-39);
 }
 
 .App {
