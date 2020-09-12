@@ -20,7 +20,7 @@ const Tags = () => {
       {tags.map(tag => {
         return (
           <div key={tag} className="pa3 w-20">
-            <Link to={`/tag/${tag}`} style={{textDecoration: 'none'}}> 
+            <Link to={`/tags/${tag}`} style={{textDecoration: 'none'}}> 
               <div className="ba br3 card tc">
                   <p>{tag}</p>
               </div>
