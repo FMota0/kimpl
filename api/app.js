@@ -4,6 +4,9 @@ var logger = require('morgan');
 
 var app = express();
 
+const { body, validationResult } = require('express-validator');
+
+const { getId } = require('./utils');
 const Tag = require('./models/Tag');
 const Link = require('./models/Link');
 
@@ -28,6 +31,58 @@ app.get('/tags/:tagId', async (req, res) => {
     },
   );
   res.send(links);
+});
+
+const judges = [
+  'Codeforces',
+  'AtCoder',
+  'URI',
+  'CodeChef',
+];
+
+app.post('/links', [
+  body('desc').trim().notEmpty().isLength({ min: 1, max: 500 }),
+  body('difficulty').isInt(),
+  body('judge').trim().isIn(judges),
+  body('link').trim().notEmpty().isURL(),
+  body('owner').trim().notEmpty().isLength({ min: 4, max: 20 }),
+  body('tags').isArray({ min: 1, max: 10 }).custom(values => {
+    values.forEach(value => {
+      if (typeof value !== 'string') {
+        throw new Error('Incorrect type for tag');
+      }
+    });
+    return true;
+  })
+], async (req, res) => {
+
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const {
+    desc,
+    difficulty,
+    judge,
+    link,
+    owner,
+    tags,
+  } = req.body;
+
+  const newLink = new Link({
+    desc,
+    difficulty,
+    id: getId(),
+    judge,
+    likes: 0,
+    link,
+    owner,
+    tags,
+  });
+
+  const result = await newLink.save();
+  res.send(result);
 });
 
 module.exports = app;
