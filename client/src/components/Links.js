@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, Fragment } from "react";
+import Modal from "react-modal";
 
 import LinkCard from "./LinkCard";
+import Link from "./Link";
 
 const links = [
   {
@@ -12,19 +14,43 @@ const links = [
   },
 ];
 
+const customStyles = {
+  content : {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    minWidth: '600px',
+    minHeight: '400px',
+  }
+};
+
 const Links = () => {
+  const [selectedLink, setSelectedLink] = useState(null);
+
   return (
-    <div className="flex flex-wrap">
-      {
-        Array(20).fill(0).map((_, i) => {
-          return (
-            <div key={i} className="pa3 w-10">
-              <LinkCard link={links[0]}/>
-            </div>
-          );
-        })
-      }
-    </div>
+    <Fragment>
+      <Modal 
+        isOpen={!!selectedLink}
+        onRequestClose={() => setSelectedLink(null)}
+        style={customStyles}
+      >
+        { selectedLink && <Link link={selectedLink}/>}
+      </Modal>
+      <div className="flex flex-wrap">
+        {
+          Array(20).fill(0).map((_, i) => {
+            return (
+              <div key={i} className="pa3 w-10" onClick={() => setSelectedLink(links[0])}>
+                <LinkCard link={links[0]}/>
+              </div>
+            );
+          })
+        }
+      </div>
+    </Fragment>
   )
 };
 
