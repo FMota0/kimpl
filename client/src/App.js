@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Header from "./components/Header";
 import Tags from "./components/Tags";
 
 function App() {
   return (
     <div className="App">
-      <div className="ml4 mr5">
+      <Header/>
+      <div className="ml2 mr2">
         <Tags/>
       </div>
     </div>

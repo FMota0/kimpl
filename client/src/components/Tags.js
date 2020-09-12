@@ -18,9 +18,9 @@ const Tags = () => {
     <div className="flex flex-wrap">
       {tags.map(tag => {
         return (
-          <div key={tag} className="pa3 w-25">
-            <div className="ba br3 b--celeste">
-              <p className="celeste">
+          <div key={tag} className="pa3 w-20">
+            <div className="ba br3 b--medium-spring-green">
+              <p className="medium-spring-green">
                 {tag}
               </p>
             </div>

@@ -1,11 +1,14 @@
 :root {
   --celeste: #9cfffaff;
-  --rich-black-fogra-39: #000500ff;
+  --onyx: #353B3C;
   --rhythm: #6a6b83ff;
+  --battleship-grey: #808d8eff;
+  --medium-aquamarine: #6fedb7ff;
+  --medium-spring-green: #59ffa0ff;
 }
 
-.rich-black-fogra-39 {
-  color: var(--rich-black-fogra-39);
+.onyx {
+  color: var(--onyx);
 }
 
 .celeste {
@@ -16,8 +19,20 @@
   border-color: var(--celeste);
 }
 
+.medium-spring-green {
+  color: var(--medium-spring-green);
+}
+
+.b--medium-spring-green {
+  border-color: var(--medium-spring-green);
+}
+
+.bg-onyx {
+  background-color: var(--onyx);
+}
+
 html {
-  background-color: var(--rich-black-fogra-39);
+  background-color: var(--battleship-grey);
 }
 
 .App {
