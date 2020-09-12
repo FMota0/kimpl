@@ -11,6 +11,8 @@ const links = [
     difficulty: 5,
     likes: 2,
     judge: 'Codeforces',
+    link: 'google.com',
+    desc: 'Nya Nya',
   },
 ];
 
@@ -24,6 +26,7 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     minWidth: '600px',
     minHeight: '400px',
+    backgroundColor: 'var(--charcoal)'
   }
 };
 
