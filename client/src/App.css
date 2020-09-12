@@ -1,3 +1,9 @@
+:root {
+  --celeste: #9cfffaff;
+  --rich-black-fogra-29: #0c1618ff;
+  --rhythm: #6a6b83ff;
+}
+
 .App {
   text-align: center;
 }
