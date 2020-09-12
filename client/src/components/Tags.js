@@ -19,9 +19,9 @@ const Tags = () => {
     <div className="flex flex-wrap">
       {tags.map(tag => {
         return (
-          <div key={tag} className="pa3 w-20">
+          <div key={tag} className="pa2 w-20 f3">
             <Link to={`/tags/${tag}`} style={{textDecoration: 'none'}}> 
-              <div className="ba br3 card tc">
+              <div className="ba br2 card tc">
                   <p>{tag}</p>
               </div>
             </Link>

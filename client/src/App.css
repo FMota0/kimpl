@@ -5,35 +5,38 @@
   --battleship-grey: #808d8eff;
   --medium-aquamarine: #6fedb7ff;
   --medium-spring-green: #59ffa0ff;
+  --raisin-black: #232931ff;
+  --charcoal: #393e46ff;
+  --cultured: #eeeeeeff;
+  --cerulean-crayola: #00a5cfff;
+  --verdigris: #48a9a6ff;
 }
 
-.onyx {
-  color: var(--onyx);
-}
-
-.celeste {
-  color: var(--celeste);
-}
-
-.b--celeste {
-  border-color: var(--celeste);
-}
+.onyx { color: var(--onyx); }
+.bg-onyx { background-color: var(--onyx); }
+.raisin-black { color: var(--raisin-black); }
+.bg-raisin-black { background-color: var(--raisin-black); }
+.charcoal { color: var(--charcoal); }
+.bg-charcoal { background-color: var(--charcoal); }
+.cultured { color: var(--cultured); }
+.bg-cultured { background-color: var(--cultured); }
+.cerulean-crayola { color: var(--cerulean-crayola); }
+.bg-cerulean-crayola { background-color: var(--cerulean-crayola); }
+.verdigris { color: var(--verdigris); }
+.bg-verdigris { background-color: var(--verdigris); } 
 
 .card {
-  color: var(--medium-spring-green);
-  border-color: var(--medium-spring-green);
+  color: var(--cultured);
+  border-color: var(--cultured);
+  background-color: var(--raisin-black);
 }
 
 .card:hover {
-  color: var(--battleship-grey);
-  border-color: var(--battleship-grey);
-  background-color: var(--medium-aquamarine);
-}
-
-.bg-onyx {
-  background-color: var(--onyx);
+  color: var(--raisin-black);
+  border-color: var(--raisin-black);
+  background-color: var(--cultured);
 }
 
 html {
-  background-color: var(--battleship-grey);
+  background-color: var(--charcoal);
 }
