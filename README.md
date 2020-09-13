@@ -6,6 +6,7 @@ Kimpl is an application to keep links to submissions to online judges (i.e. Code
 
 ## Deploy
 ![Api Deploy](https://github.com/fmota0/kimpl/workflows/Api%20Deploy/badge.svg)
+![Client Deploy](https://github.com/fmota0/kimpl/workflows/Client%20Deploy/badge.svg)
 
 ### Api deploy instructions
 
