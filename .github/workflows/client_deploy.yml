@@ -24,7 +24,7 @@ jobs:
       - name: Deploy to kimpl.surge.sh
         uses: dswistowski/surge-sh-action@v1
         with:
-          domain: 'kimpl.surge.sh'
+          domain: 'https://kimpl.surge.sh'
           project: './client/build'
           login: ${{secrets.SURGE_LOGIN}}
           token: ${{secrets.SURGE_TOKEN}}
