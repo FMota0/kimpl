@@ -21,6 +21,10 @@ jobs:
       - name: Build react
         working-directory: ./client
         run: yarn build
+      - name: Add 200.html
+        working-directory: ./client
+        run: |
+          mv build/index.html build/200.html
       - name: Deploy to kimpl.surge.sh
         uses: dswistowski/surge-sh-action@v1
         with:
