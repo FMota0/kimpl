@@ -24,4 +24,4 @@ This alternative requires to set the following secrets in the repository: HEROKU
 
 ### Client deploy instructions
 
-The client is located in [client](client) and can be deployed as any react application. To deploy using github actions workflow it's necessary to add the following secrets to the repository: SURGE_LOGIN and SURGE_TOKEN. Also it's necessary to change the domain.
+The client is located in [client](client) and can be deployed as any react application. To deploy using [github actions workflow](.github/workflows/client_deploy.yml) it's necessary to add the following secrets to the repository: SURGE_LOGIN and SURGE_TOKEN. Also it's necessary to change the domain.
