@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import Modal from "react-modal";
 
 import LinkCard from "./LinkCard";
@@ -33,6 +33,9 @@ const customStyles = {
 const Links = () => {
   const [selectedLink, setSelectedLink] = useState(null);
 
+  useEffect(() => {
+    Modal.setAppElement('body');
+  }, []);
   return (
     <Fragment>
       <Modal 
