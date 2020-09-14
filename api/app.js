@@ -1,6 +1,7 @@
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors');
 
 var app = express();
 
@@ -12,6 +13,7 @@ const Link = require('./models/Link');
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
@@ -42,7 +44,7 @@ const judges = [
 
 app.post('/links', [
   body('desc').trim().notEmpty().isLength({ min: 1, max: 500 }),
-  body('difficulty').isInt(),
+  body('difficulty').isInt({ min: 1, max: 10 }),
   body('judge').trim().isIn(judges),
   body('link').trim().notEmpty().isURL(),
   body('owner').trim().notEmpty().isLength({ min: 4, max: 20 }),
@@ -84,7 +86,7 @@ app.post('/links', [
   const result = await newLink.save();
 
   await Promise.all(tags.map(async tag => {
-    if (Tag.count({ tag }) == 0) {
+    if ((await Tag.count({ tag })) == 0) {
       const newTag = new Tag({ tag });
       await newTag.save();
     }
