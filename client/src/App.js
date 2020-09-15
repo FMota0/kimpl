@@ -14,7 +14,7 @@ function App() {
       <div className="ml2 mr2">
         <Switch>
           <Route path="/" exact component={Tags}/>
-          <Route path="/tags/:tag" exact component={Links}/>
+          <Route path="/tags/:tagId" exact component={Links}/>
           <Route path="/new" component={CreateLink}/>
         </Switch>
       </div>
