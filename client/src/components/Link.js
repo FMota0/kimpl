@@ -6,7 +6,7 @@ const Link = ({link}) => {
       <p className="f2 tc mt2"> {link.id} </p>
       <div className="flex flex-wrap">
         <div className="w-60">
-          <p> Link: <a href={link.link} style={{textDecoration: 'none'}} className="cerulean-crayola"> {link.link}</a>  </p>
+          <p data-testid='link-ref'>Link: <a href={link.link} style={{textDecoration: 'none'}} className="cerulean-crayola">{link.link}</a></p>
           <p> Descrição: {link.desc} </p>
         </div>
         <div className="w-40">
