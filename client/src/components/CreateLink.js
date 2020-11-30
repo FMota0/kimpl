@@ -9,11 +9,22 @@ const CreateLink = () => {
   const [ judge, setJudge ] = useState('Codeforces');
   const [ owner, setOwner ] = useState('');
   const [ tags, setTags ] = useState('');
+  const [ saved, setSaved ] = useState(false);
 
-  const saveNewLink = (e) => {
+  const saveNewLink = async (e) => {
     e.preventDefault();
     const linkData = { link, desc, difficulty, judge, owner, tags: tags.split(',') };
-    axios.post('/links', linkData);
+    await axios.post('/links', linkData);
+    setLink('');
+    setDesc('');
+    setDifficulty(1);
+    setJudge('Codeforces');
+    setOwner('');
+    setTags('');
+    setSaved(true);
+    setTimeout(() => {
+      setSaved(false);
+    }, 2000);
   };
 
   return (
@@ -96,6 +107,8 @@ const CreateLink = () => {
           type="submit"
           value="Create"
         />
+
+        { saved && <p className="green"> Salvo com sucesso.</p> }
       </form>
     </div>
   );

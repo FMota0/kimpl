@@ -35,6 +35,24 @@ app.get('/tags/:tagId', async (req, res) => {
   res.send(links);
 });
 
+app.get('/search', async (req, res) => {
+  const topic = req.query.i;
+  const fields = ['tags', 'desc', 'link', 'owner'];
+  const links = await Link.find(
+    {
+      $or: fields.map(field => {
+        return {
+          [field]: {
+            "$regex": topic,
+            "$options": "i",
+          },
+        };
+      }),
+    }
+  );
+  res.send(links);
+})
+
 const judges = [
   'Codeforces',
   'AtCoder',
